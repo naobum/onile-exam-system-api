@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+<<<<<<< HEAD
 var session = require('express-session');
 var bodyParser = require('body-parser');
 
@@ -14,18 +15,28 @@ var questionsRouter = require('./routes/questions');
 var examsRouter = require('./routes/exams');
 var attemptsRouter = require('./routes/attempts');
 var studentsRouter = require('./routes/students');
+=======
+
+var indexRouter = require('./routes/index');
+var usersRouter = require('./routes/users');
+>>>>>>> upstream/master
 
 var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
+<<<<<<< HEAD
 app.set('view engine', 'pug');
+=======
+app.set('view engine', 'jade');
+>>>>>>> upstream/master
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+<<<<<<< HEAD
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(session({
@@ -49,6 +60,11 @@ app.use('/questions', questionsRouter);
 app.use('/exams', examsRouter);
 app.use('/attempts', attemptsRouter);
 app.use('/students', studentsRouter);
+=======
+
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
+>>>>>>> upstream/master
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -66,4 +82,8 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+<<<<<<< HEAD
 module.exports = app;
+=======
+module.exports = app;
+>>>>>>> upstream/master
