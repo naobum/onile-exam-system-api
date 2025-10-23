@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  h1= title
+  
+  if error
+    .alert.alert-error= error
+  
+  form(method="POST" action=student ? `/students/edit/${student.ID_Пользователя}` : "/students/create")
+    .form-group
+      label Имя:
+      input.form-control(type="text" name="firstName" value=student ? student.Имя : "" required)
+    .form-group
+      label Фамилия:
+      input.form-control(type="text" name="lastName" value=student ? student.Фамилия : "" required)
+    .form-group
+      label Email:
+      input.form-control(type="email" name="email" value=student ? student.Email : "" required)
+    .form-group
+      label Пароль:
+      input.form-control(type="password" name="password" placeholder=student ? "Оставьте пустым, если не хотите менять" : "" required=!student)
+      if student
+        small.text-muted Оставьте пустым, если не хотите менять пароль
+    button.btn(type="submit")= student ? "Обновить" : "Создать"
+    a.btn(href="/students" style="margin-left: 10px;") Отмена

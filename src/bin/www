@@ -5,7 +5,11 @@
  */
 
 var app = require('../app');
+<<<<<<< HEAD
+var debug = require('debug')('exam-system:server');
+=======
 var debug = require('debug')('src:server');
+>>>>>>> upstream/master
 var http = require('http');
 
 /**
@@ -87,4 +91,10 @@ function onListening() {
     ? 'pipe ' + addr
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
+<<<<<<< HEAD
+  console.log('Сервер запущен на порту ' + addr.port);
+  console.log('Откройте http://localhost:' + addr.port + ' в браузере');
 }
+=======
+}
+>>>>>>> upstream/master

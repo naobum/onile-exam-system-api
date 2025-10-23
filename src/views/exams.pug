@@ -1,0 +1,38 @@
+extends layout
+
+block content
+  h1 Шаблоны экзаменов
+  
+  .form-group
+    h2 Создать новый шаблон
+    form(method="POST" action="/exams/create")
+      .form-group
+        label Название:
+        input.form-control(type="text" name="name" placeholder="Название экзамена" required)
+      .form-group
+        label Длительность (минуты):
+        input.form-control(type="number" name="duration" min="1" value="60" required)
+      button.btn(type="submit") Создать шаблон
+  
+  h2 Мои шаблоны экзаменов
+  if exams && exams.length
+    table.table
+      thead
+        tr
+          th ID
+          th Название
+          th Длительность
+          th Дата создания
+          th Действия
+      tbody
+        each exam in exams
+          tr
+            td= exam.ID_Шаблона
+            td= exam.Название
+            td= exam.Длительность_мин + ' мин'
+            td= new Date(exam.Дата_Создания).toLocaleDateString()
+            td
+              a.btn(href=`#`) Настроить
+              a.btn(href=`#`) Допуски
+  else
+    p У вас пока нет шаблонов экзаменов
