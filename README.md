@@ -99,8 +99,8 @@ npm start
 
 | Имя | GitHub | Роль в проекте |
 | :--- | :--- | :--- |
-| **Студент 1** | [@Student1-GH](https://www.google.com/search?q=https://github.com/naobum) |
-| **Студент 2** | [@Student2-GH](https://www.google.com/search?q=https://github.com/MrChem2281) |
+| **Студент 1** | [@Naobum](https://www.google.com/search?q=https://github.com/naobum) |
+| **Студент 2** | [@MrChem](https://www.google.com/search?q=https://github.com/MrChem2281) |
 
 -----
 
