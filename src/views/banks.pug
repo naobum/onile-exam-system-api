@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  h1 Банки вопросов
+  
+  .form-group
+    h2 Создать новый банк
+    form(method="POST" action="/banks/create")
+      input.form-control(type="text" name="name" placeholder="Название банка" required)
+      button.btn(type="submit") Создать банк
+  
+  h2 Мои банки
+  if banks && banks.length
+    table.table
+      thead
+        tr
+          th ID
+          th Название
+          th Действия
+      tbody
+        each bank in banks
+          tr
+            td= bank.ID_Банка
+            td= bank.Название
+            td
+              a.btn(href=`/questions/bank/${bank.ID_Банка}`) Вопросы
+  else
+    p У вас пока нет банков вопросов

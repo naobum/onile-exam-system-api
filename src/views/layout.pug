@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    if user
+      .header
+        .container
+          .nav
+            .nav-brand Система тестирования
+            ul.nav-links
+              li: a(href="/") Главная
+              li: a(href="/banks") Банки вопросов
+              li: a(href="/exams") Экзамены
+              li: a(href="/students") Студенты
+              li: a(href="/auth/logout") Выйти (#{user.Имя})
+    
+    .container
+      .main-content
+        block content

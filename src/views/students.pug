@@ -1,0 +1,31 @@
+extends layout
+
+block content
+  h1 Управление студентами
+  
+  .form-group
+    a.btn(hhref="/students/create") Добавить студента
+  
+  h2 Список студентов
+  if students && students.length
+    table.table
+      thead
+        tr
+          th ID
+          th Имя
+          th Фамилия
+          th Email
+          th Действия
+      tbody
+        each student in students
+          tr
+            td= student.ID_Пользователя
+            td= student.Имя
+            td= student.Фамилия
+            td= student.Email
+            td
+              a.btn(href=`/students/edit/${student.ID_Пользователя}`) Редактировать
+              form(method="POST" action=`/students/delete/${student.ID_Пользователя}` style="display: inline; margin-left: 10px;")
+                button.btn.btn-danger(type="submit" onclick="return confirm('Вы уверены, что хотите удалить этого студента?')") Удалить
+  else
+    p Студентов пока нет

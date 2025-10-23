@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  h1 Добро пожаловать в систему тестирования
+  
+  .dashboard-cards
+    .card
+      h3 Банки вопросов
+      .number= banksCount
+      a.btn(href="/banks") Управление
+    
+    .card
+      h3 Экзамены
+      .number= examsCount
+      a.btn(href="/exams") Управление
+    
+    .card
+      h3 Студенты
+      .number= studentsCount
+      a.btn(href="/students") Управление

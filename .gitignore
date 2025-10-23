@@ -1,0 +1,27 @@
+# Зависимости
+node_modules/
+
+# Файлы логов
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Файлы операционных систем
+.DS_Store
+Thumbs.db
+
+# Файлы конфигурации и кэши
+.env
+.env.*
+.vscode/ # Для редактора VS Code
+.idea/ # Для IDE JetBrains
+*.swp # Файлы смены (Vim)
+
+# Сборка проекта (если используется)
+dist/
+build/
+
+# Другие временные файлы
+*.tmp
