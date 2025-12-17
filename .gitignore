@@ -11,6 +11,7 @@ yarn-error.log*
 # Файлы операционных систем
 .DS_Store
 Thumbs.db
+db.sqlite
 
 # Файлы конфигурации и кэши
 .env

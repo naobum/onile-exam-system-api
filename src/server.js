@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken');
 const db = require('./database');
 const path = require('path');
 const { authenticateToken, requireRole } = require('./middleware');
-require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
+require('dotenv').config();
 
 const app = express();
 app.use(bodyParser.json());
