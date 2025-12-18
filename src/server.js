@@ -4,11 +4,13 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const db = require('./database');
 const path = require('path');
+const cors = require('cors');
 const { authenticateToken, requireRole } = require('./middleware');
 require('dotenv').config();
 
 const app = express();
 app.use(bodyParser.json());
+app.use(cors());
 
 const PORT = process.env.PORT || 3000;
 
